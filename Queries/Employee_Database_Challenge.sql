@@ -24,7 +24,7 @@ WHERE to_date = '9999-01-01'
 ORDER BY r.emp_no, to_date DESC;
 
 SELECT COUNT(u.title), u.title
-INTO retiring_table
+--INTO retiring_table
 FROM unique_titles as u
 GROUP BY title
 ORDER BY COUNT(u.title)DESC;
@@ -47,3 +47,9 @@ on (e.emp_no = t.emp_no)
 WHERE (de.to_date = '9999-01-01')
 AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no;
+
+SELECT COUNT(m.title), m.title
+--INTO retiring_table
+FROM mentorship_elgibility as m
+GROUP BY title
+ORDER BY COUNT(m.title)DESC;
